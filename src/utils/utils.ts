@@ -66,7 +66,11 @@ export function getObjectProperties(obj: object, filter?: (name: string, prop: P
         )
     )
         .filter(([name, prop]: [string, PropertyDescriptor]) => filter ? filter(name, prop) : (name !== 'constructor'))
+<<<<<<< HEAD
         .map(([name]) => name);
+=======
+        .map(([name, prop]) => name);
+>>>>>>> 9cd9dcc4569b4b06ca516d80a5369975bd8b7a29
 }
 
 /**
