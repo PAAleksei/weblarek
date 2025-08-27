@@ -19,22 +19,11 @@ export class Basket {
         this.listOfPickedProducts = [];
     };
 
-    getTotalCost(): number | null{
-        let totalCost: number | null = 0;
-        
-        this.listOfPickedProducts.forEach((product) => {
-            
-            if(product.price && totalCost !== null){
-                totalCost = totalCost + product.price;
-            }
-            else if(product.price === null){
-                totalCost = totalCost;
-            }
-            else if(product === undefined){
-                totalCost = null;
-            }
-        });
-        return totalCost === 0||null ? null : totalCost;
+    getTotalCost(): number{
+        const totalCost = this.listOfPickedProducts.reduce(function(sum:number, currentProduct:IProduct):number{
+            return sum + currentProduct.price
+        }, 0);
+        return totalCost;
     };
 
     getQuantityOfProducts(): number | null{

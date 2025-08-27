@@ -1,11 +1,17 @@
-import { ICostumer, TPayment } from "../../types";
+import { ICostumer, TErrorText, TPayment } from "../../types";
 
 export class Costumer {
-    protected payment!: TPayment;
-    protected email!: string;
-    protected address!: string;
-    protected phone!: string;
+    protected payment: TPayment;
+    protected email: string;
+    protected address: string;
+    protected phone: string;
 
+    constructor(){
+        this.payment = '';
+        this.email = '';
+        this.address = '';
+        this.phone = '';
+    }
     setPayment(item: TPayment): void{
         this.payment = item;
     };
@@ -38,7 +44,15 @@ export class Costumer {
         this.phone = '';
     };
 
-    validateDataOfCostumer(): boolean{
-        return (this.address !== '' && this.email !== '' && this.payment !== '' && this.phone !== '') ? true : false;
+    validateDataOfCostumer(dataValue: string | TPayment): TErrorText{
+        let errorText;
+        
+        if(dataValue){
+            errorText = ''
+        }
+        else{
+            errorText = 'Поле не должно быть пустым'
+        }
+        return errorText;
     };
 }

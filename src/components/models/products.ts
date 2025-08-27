@@ -21,13 +21,9 @@ export class Products {
     };
     
     getProductById(id: string): IProduct | undefined{
-        let findedProduct: IProduct | undefined;
-
-        this.listOfProducts.forEach((product) => {
-            if(product.id === id){
-                findedProduct = product;
-            }
-        });
+        let findedProduct = this.listOfProducts.find((product)=>{
+            return product.id === id;
+        })
         return findedProduct;
     };
 }

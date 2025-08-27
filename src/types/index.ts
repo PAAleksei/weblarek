@@ -1,6 +1,7 @@
 export type ApiPostMethods = 'POST' | 'PUT' | 'DELETE';
 export type TPayment = 'card' | 'cash' | '';
 export type TId = string; 
+export type TErrorText = string;
 
 export interface IApi {
     get<T extends object>(uri: string): Promise<T>;
