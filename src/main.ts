@@ -58,7 +58,11 @@ costumerModel.setAddress('ул. Пушкина, дом Колотушкина');
 costumerModel.setPhone('8 800 555 35 35'); // Сохранение контактного номера телефона.
 
 console.log('Метод получения данных пользователя: ', costumerModel.getDataOfCostumer());
-console.log('Метод проверки заполненности данных пользователя (проверка данных "адрес"): ', costumerModel.validateDataOfCostumer(costumerModel.getDataOfCostumer().address), );
+console.log('Метод проверки заполненности данных пользователя (проверка данных - все поля заполнены): ', costumerModel.validateDataOfCostumer(), );
 
 costumerModel.clearDataOfCostumer() // Удаление всех данных пользователя.
-console.log('Метод проверки заполненности данных пользователя (проверка данных "адрес" - адрес пустой): ', costumerModel.validateDataOfCostumer(costumerModel.getDataOfCostumer().address));
+console.log('Метод проверки заполненности данных пользователя (проверка данных - все поля пустые): ', costumerModel.validateDataOfCostumer());
+
+costumerModel.setAddress('ул. Толстого, дом Краснова'); // Сохранение адреса доставки.
+costumerModel.setPhone('8 666 666 66 66'); // Сохранение контактного номера телефона.
+console.log('Метод проверки заполненности данных пользователя (проверка данных - поля "email" и "payment" пустые): ', costumerModel.validateDataOfCostumer());

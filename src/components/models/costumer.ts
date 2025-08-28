@@ -1,4 +1,4 @@
-import { ICostumer, TErrorText, TPayment } from "../../types";
+import { ICostumer, ICostumerValidationForm, TPayment } from "../../types";
 
 export class Costumer {
     protected payment: TPayment;
@@ -44,15 +44,17 @@ export class Costumer {
         this.phone = '';
     };
 
-    validateDataOfCostumer(dataValue: string | TPayment): TErrorText{
-        let errorText;
-        
-        if(dataValue){
-            errorText = ''
+    validateDataOfCostumer(): ICostumerValidationForm{
+        const validationForm = {};
+
+        const costumerForm = this.getDataOfCostumer();
+
+        for(let property in costumerForm){
+            if(!costumerForm[property]){
+                validationForm[property] = 'Поле не должно быть пустым';
+            }
+            else {validationForm[property] = ''}
         }
-        else{
-            errorText = 'Поле не должно быть пустым'
-        }
-        return errorText;
+        return validationForm as ICostumerValidationForm;
     };
 }

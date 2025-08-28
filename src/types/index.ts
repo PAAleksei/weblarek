@@ -24,12 +24,19 @@ export interface ICostumer {
     phone: string;
 }
 
+export interface ICostumerValidationForm extends Omit<ICostumer, 'payment'> {
+    payment: TErrorText;
+    email: TErrorText;
+    address: TErrorText;
+    phone: TErrorText;
+}
+
 export interface IApiData {
     total: number; 
     items: IProduct[];
 }
 
-export interface IOrder extends ICostumer{
+export interface IOrder extends ICostumer {
     total: number;
     items: TId[];
 }
