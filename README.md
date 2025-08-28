@@ -121,10 +121,10 @@ Presenter - презентер содержит основную логику п
 
 **`interface ICostumerValidationForm`** - интерфейс, описывающий форму для валидации. Интерфейс имеет те же данные, что и в интерфейсе `ICostumer`, только все типы полей переопределены, для заполнения их текстом, описывающим ошибку (или поля остаются пустыми, в случае отсутствия ошибок). Содержит в себе следующие данные:
 
-`payment: TErrorText` - поле, соответствующее полю `payment: TPayment` интрефейса `interface ICostumer`. \
-`email: TErrorText` - поле, соответствующее полю `email: string` интрефейса `interface ICostumer`. \
-`address: TErrorText` - поле, соответствующее полю `address: string` интрефейса `interface ICostumer`. \
-`phone: TErrorText` - поле, соответствующее полю `phone: string` интрефейса `interface ICostumer`.
+`payment: TErrorText` - поле, соответствующее полю `payment: TPayment` интерфейса `interface ICostumer`. \
+`email: TErrorText` - поле, соответствующее полю `email: string` интерфейса `interface ICostumer`. \
+`address: TErrorText` - поле, соответствующее полю `address: string` интерфейса `interface ICostumer`. \
+`phone: TErrorText` - поле, соответствующее полю `phone: string` интерфейса `interface ICostumer`.
 ***
 
 **`interface IApiData`** - интерфейс, описывающий данные, получаемые от сервера.
